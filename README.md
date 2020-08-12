@@ -32,3 +32,7 @@ The tests can be run using pytest with the command
 pytest
 ```
 from the root directory
+
+## Useful Reading and Learning Resources
+
+https://www.youtube.com/watch?v=HTLu2DFOdTg
