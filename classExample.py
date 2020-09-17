@@ -1,14 +1,13 @@
+import main
 class example():
     def __init__(self):
         self.data = 10
 
     def prepare_data(self):
-        return 5
+        return main.main()
 
     def fetch_data(self):
-        return prepare_data()
-
-
+        return self.prepare_data()
 
 eg = example()
 

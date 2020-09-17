@@ -8,4 +8,5 @@ def standard_loop():
         print (i, end='')
 
 
-standard_loop()
+def main():
+    print ("main")
