@@ -9,7 +9,7 @@ from constants import Config
 class TestDataService(unittest.TestCase):
     @patch('classExample.Example.get_data')
     def test_class_example(self, mock_get_data):
-        '''Mock a function of a pyhon class'''
+        '''Mock a function of a class'''
         mock_get_data.return_value = 5
         cle = Example()
         assert cle.get_data() == 5
