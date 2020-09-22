@@ -1,5 +1,5 @@
 import main
-class example():
+class Example():
     def __init__(self):
         self.data = 10
 
@@ -9,6 +9,9 @@ class example():
     def fetch_data(self):
         return self.prepare_data()
 
-eg = example()
+    def get_data(self):
+        return self.data
 
-print(eg.fetch_data())
+# eg = Example()
+
+# print(eg.fetch_data())
