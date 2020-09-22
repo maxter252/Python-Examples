@@ -4,6 +4,7 @@ class Example():
     def __init__(self):
         self.data = 10
         self.URL = ''
+        self.object = MiniObject()
 
     def prepare_data(self):
         return main.main()
@@ -17,6 +18,14 @@ class Example():
     def get_url(self):
         cfg = Config()
         return cfg.get_url()
+
+    def get_object(self):
+        return self.object
+
+class MiniObject():
+    def __init__(self):
+        self.param1 = 1
+        self.param2 = 2
 
 # eg = Example()
 
