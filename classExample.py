@@ -1,9 +1,11 @@
 import main
 from constants import Config
-class Example():
+
+
+class Example:
     def __init__(self):
         self.data = 10
-        self.URL = ''
+        self.URL = ""
         self.object = MiniObject()
 
     def prepare_data(self):
@@ -22,10 +24,12 @@ class Example():
     def get_object(self):
         return self.object
 
-class MiniObject():
+
+class MiniObject:
     def __init__(self):
         self.param1 = 1
         self.param2 = 2
+
 
 # eg = Example()
 

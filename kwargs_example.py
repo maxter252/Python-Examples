@@ -1,9 +1,13 @@
 from collections import Counter
+
+
 def example(**kwargs):
-    for key,value in kwargs.items():
-        print (key,value)
+    for key, value in kwargs.items():
+        print(key, value)
+
 
 # example(test="kebrjlhkjl/jrnfl", test2=5)
+
 
 def makeAnagram(a, b):
     a_dict = {}
@@ -12,17 +16,17 @@ def makeAnagram(a, b):
     for i in a:
         if i in a_dict.keys():
             a_dict[i] = a_dict[i] + 1
-        else: 
+        else:
             a_dict[i] = 1
 
     for i in b:
         if i in b_dict.keys():
             b_dict[i] = b_dict[i] + 1
-        else: 
+        else:
             b_dict[i] = 1
 
-    print (a_dict)
-    print (b_dict)
+    print(a_dict)
+    print(b_dict)
 
     for key, val in a_dict.items():
         if key in b_dict.keys() and val < b_dict[key]:
@@ -38,9 +42,12 @@ def makeAnagram(a, b):
 
     return count
 
+
 def makeAnagram2(a, b):
     a_dict = Counter(a)
     b_dict = Counter(b)
     a_dict.subtract(b_dict)
-    return sum (abs(i) for i in a_dict.values() )
-print(makeAnagram2('fcrxzwscanmligyxyvym','jxwtrhvujlmrpdoqbisbwhmgpmeoke'))
+    return sum(abs(i) for i in a_dict.values())
+
+
+print(makeAnagram2("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke"))

@@ -8,30 +8,22 @@ Initially this repo will focus on decorators and classes
 ## How to Set Up and Run
 The following commands are for MacOS, please substitute the appropriate command for Windows / Linux where necessary. 
 
-To run this pipeline first create a local environment
+To setup this repo locally run
 ```bash
-python -m venv .venv
+make setup
+```
+If your default python version is not python 3, try setting an alias, or running ```make setup3```
+
+To run the code
+```bash
+make run
 ```
 
-activate the local env
+To run all checks on the code
 ```bash
-source .venv/bin/activate
+make pre-commit
 ```
-Then install the requirements
-```bash
-pip install requirements.txt
-```
-
-Now run the pipeline. 
-```bash
-python main.py
-```
-
-The tests can be run using pytest with the command
-```bash
-pytest
-```
-from the root directory
+This will run a series of checks on the code which can be configured in the ```.pre-commit-config.yaml``` file
 
 ## Useful Reading and Learning Resources
 

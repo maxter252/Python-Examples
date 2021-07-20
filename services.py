@@ -1,18 +1,15 @@
 # Standard library imports...
-try:
-    from urllib.parse import urljoin
-except ImportError:
-    from urlparse import urljoin
-
 import json
+from urllib.parse import urljoin
 
 # Third-party imports...
 import requests
 
 # Local imports...
-from constants import BASE_URL
+from constants import Config
 
-TODOS_URL = urljoin(BASE_URL, 'todos')
+config = Config()
+TODOS_URL = urljoin(config.BASE_URL, "todos")
 
 
 def get_todos(i):
@@ -23,14 +20,17 @@ def get_todos(i):
     else:
         return None
 
+
 def parse_response(res):
     return res["userId"]
+
 
 def get_group_of_resp():
     result = []
     for i in [1]:
-        item_id = parse_response(get_todos(i))  
+        item_id = parse_response(get_todos(i))
         result.append(item_id)
 
+
 # if __name__ == "main":
-#print(parse_response(get_todos()))
+# print(parse_response(get_todos()))

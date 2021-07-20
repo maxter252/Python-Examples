@@ -1,24 +1,25 @@
 # Built-in library imports...
-from unittest.mock import Mock, patch
 import unittest
+from unittest.mock import Mock, patch
 
-# Third-party imports...
-import responses
-import requests
 import pytest
+import requests
 
 # Local imports...
-from services import parse_response, get_todos
+from services import get_todos, parse_response
+
 
 def sample_api_response():
-    return {'userId': 1, 'id': 1, 'title': 'delectus aut autem', 'completed': False}
+    return {"userId": 1, "id": 1, "title": "delectus aut autem", "completed": False}
+
 
 # ----- Tests ------ #
 def test_always_passes():
     assert True
-    
-def test_request_response(): 
-    'Test the parsing of the api response'
+
+
+def test_request_response(setup):
+    "Test the parsing of the api response"
     # Call the service, which will send a request to the server.
     output = parse_response(sample_api_response())
 
@@ -26,11 +27,14 @@ def test_request_response():
     assert output is not None
     assert output == 1
 
-@patch('services.requests.get')
+
+@patch("services.requests.get")
 def test_integration(mock_requests):
-    'Test to show how to mock an api call'
+    "Test to show how to mock an api call"
     mock_requests.return_value.ok = True
     mock_requests.return_value.text = "response text"
-    mock_requests.return_value.json.return_value = [{'userId': 1, 'id': 1, 'title': 'delectus aut autem', 'completed': False}]
+    mock_requests.return_value.json.return_value = [
+        {"userId": 1, "id": 1, "title": "delectus aut autem", "completed": False}
+    ]
     output = parse_response(get_todos(1))
     assert output == 1

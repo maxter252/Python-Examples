@@ -1,0 +1,27 @@
+repos:
+- repo: 'https://github.com/psf/black'
+  rev: 19.3b0
+  hooks:
+    - id: black
+- repo: 'https://github.com/jumanjihouse/pre-commit-hooks.git'
+  rev: 2.1.5
+  hooks:
+    - id: shellcheck
+- repo: 'https://github.com/PyCQA/isort.git'
+  rev: 5.8.0
+  hooks:
+    - id: isort
+- repo: local
+  hooks:
+    - id: static type checks
+      name: Check static types with mypy
+      entry: make static-type-checks
+      language: system
+      always_run: true
+      pass_filenames: false
+    - id: pytest
+      name: pytest
+      entry: make test
+      language: system
+      always_run: true
+      pass_filenames: false
