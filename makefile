@@ -16,7 +16,7 @@ run:
 
 # ---- Testing ----
 test:
-	.venv/bin/python -m pytest -vvs tests/ -s
+	.venv/bin/python -m pytest -vvs src/tests/ -s
 
 # ---- Code Checks ----
 pre-commit:

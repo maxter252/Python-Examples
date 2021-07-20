@@ -1,6 +1,6 @@
 import requests
 
-from decorators import timeit
+from src.decorators import timeit
 
 
 @timeit

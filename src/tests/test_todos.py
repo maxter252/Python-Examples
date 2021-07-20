@@ -6,7 +6,7 @@ import pytest
 import requests
 
 # Local imports...
-from services import get_todos, parse_response
+from src.services import get_todos, parse_response
 
 
 def sample_api_response():
@@ -28,7 +28,7 @@ def test_request_response(setup):
     assert output == 1
 
 
-@patch("services.requests.get")
+@patch("src.services.requests.get")
 def test_integration(mock_requests):
     "Test to show how to mock an api call"
     mock_requests.return_value.ok = True

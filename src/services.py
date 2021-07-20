@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 import requests
 
 # Local imports...
-from constants import Config
+from src.constants import Config
 
 config = Config()
 TODOS_URL = urljoin(config.BASE_URL, "todos")

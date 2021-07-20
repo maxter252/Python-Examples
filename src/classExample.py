@@ -1,5 +1,5 @@
-import main
-from constants import Config
+import src.main
+from src.constants import Config
 
 
 class Example:
